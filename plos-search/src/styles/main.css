@@ -1,0 +1,275 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: white;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-size: 1.1em;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.search-button {
+  padding: 15px 30px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 120px;
+}
+
+.search-button:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.search-button:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.no-results, .initial-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+  font-size: 1.1em;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Results Section */
+.results-section {
+  margin-top: 30px;
+}
+
+.results-header {
+  margin-bottom: 20px;
+}
+
+.results-header h2 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.results-info {
+  color: #7f8c8d;
+  font-size: 0.95em;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.articles-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.articles-table thead {
+  background: #f8f9fa;
+}
+
+.articles-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.articles-table td {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+.articles-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.title-cell {
+  font-weight: 500;
+  color: #2c3e50;
+  max-width: 400px;
+}
+
+.authors-cell {
+  color: #5f6368;
+  font-size: 0.95em;
+}
+
+.link-cell {
+  min-width: 120px;
+}
+
+.doi-link {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+.doi-link:hover {
+  text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 2px solid #f0f0f0;
+}
+
+.pagination-button {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.pagination-button:disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.page-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.items-select {
+  padding: 8px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .table-container {
+    overflow-x: scroll;
+  }
+}
