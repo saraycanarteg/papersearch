@@ -4,7 +4,7 @@
       v-model="localQuery"
       @keyup.enter="handleSearch"
       type="text"
-      placeholder="Search by title (e.g., health insurance, cancer, COVID-19...)"
+      placeholder="Search by title (e.g., software, music, health)"
       class="search-input"
     />
     <button @click="handleSearch" class="search-button" :disabled="loading">
