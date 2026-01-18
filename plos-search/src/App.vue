@@ -2,8 +2,7 @@
   <div id="app">
     <div class="container">
       <header>
-        <h1>PLOS Articles Search Engine</h1>
-        <p class="subtitle">Find scientific articles in the PLOS database</p>
+        <h2>PLOS Articles Search Engine</h2>
       </header>
 
       <!-- Search Bar Component -->
